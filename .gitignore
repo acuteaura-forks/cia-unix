@@ -1,0 +1,9 @@
+# Nix build results
+result
+result-*
+
+# Log files
+cia-unix.log
+
+# Not needed with Nix
+dltools.sh

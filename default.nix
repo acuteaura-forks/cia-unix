@@ -61,6 +61,7 @@ stdenv.mkDerivation rec {
     sed -i 's|"./ctrdecrypt"|ENV["CIA_UNIX_TOOLS"] + "/ctrdecrypt"|g' cia-unix.cr
     sed -i 's|"./makerom"|ENV["CIA_UNIX_TOOLS"] + "/makerom"|g' cia-unix.cr
     sed -i 's|"seeddb.bin"|ENV["CIA_UNIX_TOOLS"] + "/seeddb.bin"|g' cia-unix.cr
+    sed -i 's|"--seeddb=seeddb.bin"|"--seeddb=" + ENV["CIA_UNIX_TOOLS"] + "/seeddb.bin"|g' cia-unix.cr
     sed -i 's|%x\[which #{tool}\]|ENV["CIA_UNIX_TOOLS"] + tool|g' cia-unix.cr
     sed -i 's|process = Process.new("./#{name}"|process = Process.new(ENV["CIA_UNIX_TOOLS"] + "/#{name}"|g' cia-unix.cr
 
